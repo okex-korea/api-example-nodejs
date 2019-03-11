@@ -27,7 +27,6 @@ module.exports.getCurrencies = async (req, res) => {
       ...result.data
     });
   } catch (e) {
-    // console.log(e);
     return errorHandler(res, e);
   }
 };

@@ -58,8 +58,37 @@ const authenticatedClient = (
     });
   };
 
+  const post = (url, body, queryParams) => {
+    const requestUrl = `${url}${
+      Object.keys(queryParams).length !== 0
+        ? `?${queryString.stringify(queryParams)}`
+        : ""
+    }`;
+
+    const bodyJson = JSON.stringify(body);
+    const signature = getSignature(
+      key,
+      secret,
+      passPhrase,
+      "post",
+      requestUrl,
+      {
+        body: bodyJson
+      }
+    );
+    const headers = {
+      "content-type": "application/json; charset=utf-8",
+      ...signature
+    };
+
+    return axiosInstance.post(requestUrl, body, {
+      headers
+    });
+  };
+
   return {
-    get
+    get,
+    post
   };
 };
 

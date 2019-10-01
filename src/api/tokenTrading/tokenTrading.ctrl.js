@@ -11,7 +11,7 @@ const authenticatedClient = authMaker(
   apiKey,
   secretKey,
   passPhrase,
-  "https://www.okex.com",
+  "https://okex.co.kr",
   3000,
   {}
 );

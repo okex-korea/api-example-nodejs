@@ -96,7 +96,7 @@ module.exports = (
   key,
   secret,
   passPhrase,
-  apiUri = "https://www.okex.com",
+  apiUri = "https://okex.co.kr",
   timeout = 3000,
   axiosConfig = {}
 ) => {

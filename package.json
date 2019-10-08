@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node ./src",
-    "start:dev": "npx nodemon ./src",
+    "start:dev": "nodemon ./src",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

@@ -21,5 +21,5 @@ router.get(
   "/deposit/history/:currency",
   walletCtrl.getDepositHistoryOfCurrency
 );
-
+router.get("/asset-valuation", walletCtrl.assetValuation);
 module.exports = router;

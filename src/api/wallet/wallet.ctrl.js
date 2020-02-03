@@ -200,3 +200,17 @@ module.exports.getDepositHistoryOfCurrency = async (req, res) => {
     return errorHandler(res, e);
   }
 };
+
+module.exports.assetValuation = async (req, res) => {
+  try {
+    const result = await authenticatedClient.get(
+      `/api/account/v3/asset-valuation`,
+      req.query
+    );
+    return res.status(200).json({
+      ...result.data
+    });
+  } catch (e) {
+    return errorHandler(res, e);
+  }
+};

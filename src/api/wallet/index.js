@@ -22,4 +22,5 @@ router.get(
   walletCtrl.getDepositHistoryOfCurrency
 );
 router.get("/asset-valuation", walletCtrl.assetValuation);
+router.get("/sub-account", walletCtrl.subAccount);
 module.exports = router;

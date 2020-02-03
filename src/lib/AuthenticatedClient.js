@@ -53,6 +53,7 @@ const authenticatedClient = (
         ? `?${queryString.stringify(queryParams)}`
         : ""
     }`;
+
     return axiosInstance.get(requestUrl, {
       headers: { ...getSignature(key, secret, passPhrase, "get", requestUrl) }
     });

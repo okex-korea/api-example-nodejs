@@ -214,3 +214,18 @@ module.exports.assetValuation = async (req, res) => {
     return errorHandler(res, e);
   }
 };
+
+module.exports.subAccount = async (req, res) => {
+  try {
+    const result = await authenticatedClient.get(
+      `/api/account/v3/sub-account`,
+      req.query
+    );
+
+    return res.status(200).json({
+      ...result.data
+    });
+  } catch (e) {
+    return errorHandler(res, e);
+  }
+};

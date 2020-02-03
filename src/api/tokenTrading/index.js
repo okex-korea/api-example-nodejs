@@ -32,5 +32,6 @@ router.get(
   "/instruments/:instrument_id/candles",
   tokenTradingCtrl.getMarketData
 );
+router.get("/trade_fee", tokenTradingCtrl.tradeFee);
 
 module.exports = router;

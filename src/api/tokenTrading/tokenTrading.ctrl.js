@@ -267,3 +267,18 @@ module.exports.getMarketData = async (req, res) => {
     return errorHandler(res, e);
   }
 };
+
+module.exports.tradeFee = async (req, res) => {
+  try {
+    const result = await authenticatedClient.get(
+      `/api/spot/v3/trade_fee`,
+      req.query
+    );
+
+    return res.status(200).json({
+      ...result.data
+    });
+  } catch (e) {
+    return errorHandler(res, e);
+  }
+};
